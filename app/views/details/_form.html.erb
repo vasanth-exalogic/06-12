@@ -3,7 +3,7 @@
 <table class="table table-striped table-dark">
         <tr>
           <td><%= f.label "First Name "%><font color="white">*</font></td>
-          <td><%= f.text_field :fname%><span style="color:white;"><%= @detail.errors[:lname][0] rescue nil%></span></td>
+          <td><%= f.text_field :fname%><span style="color:white;"><%= @detail.errors[:fname][0] rescue nil%></span></td>
           <td><%= f.label "Last Name "%><font color="white">*</font></td>
           <td><%= f.text_field :lname%><span style="color:white;"><%= @detail.errors[:lname][0] rescue nil%></span></td>
         </tr>
@@ -22,7 +22,7 @@
         <tr>
           <td><%= f.label "Contact "%><font color="white">*</font></td>
           <td><%= f.text_field :contact, :pattern=>'\d*', :maxlength=>10, :minlength=>10%></td>
-          <td><%= f.label "Gender "%></td>
+          <td><%= f.label "Gender "%><font color="white">*</font></td>
           <td><%= f.radio_button :gender, 'Male'%> Male<%= f.radio_button :gender, 'Female '%> Female <br><span style="color:white;"><%= @detail.errors[:gender][0] rescue nil%></span></td>
         </tr>
         <tr>
