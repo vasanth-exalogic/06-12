@@ -159,28 +159,28 @@
               <td colspan="4"><strong>SALARY DETAILS</strong></td>
             </tr>
             <tr>
-              <td>Basic Pay</td><td><%= @pay.basic%></td>
-              <td>HRA</td><td><%= @pay.hra%></td>
+              <td>Basic Pay</td><td><%= @pay.basic.to_i%></td>
+              <td>HRA</td><td><%= @pay.hra.to_i%></td>
             </tr>
             <tr>
-              <td>CCA</td><td><%= @pay.cca%></td>
-              <td>Special Allowance</td><td><%= @pay.spl_all%></td>
+              <td>CCA</td><td><%= @pay.cca.to_i%></td>
+              <td>Special Allowance</td><td><%= @pay.spl_all.to_i%></td>
             </tr>
             <tr>
-              <td>Transport Allowance</td><td><%= @pay.trans_all%></td>
-              <td>Reimbursment</td><td><%= @pay.reimb%></td>
+              <td>Transport Allowance</td><td><%= @pay.trans_all.to_i%></td>
+              <td>Reimbursment</td><td><%= @pay.reimb.to_i%></td>
             </tr>
             <tr>
-              <td>Income Tax</td><td><%= @pay.i_tax%></td>
-              <td>Professional Tax</td><td><%= @pay.p_tax%></td>
+              <td>Income Tax</td><td><%= @pay.i_tax.to_i%></td>
+              <td>Professional Tax</td><td><%= @pay.p_tax.to_i%></td>
             </tr>
             <tr>
-              <td>Loss of Pay</td><td><%= @pay.lop%></td>
-              <td>Deductions</td><td><%= @pay.deduction%></td>
+              <td>Loss of Pay</td><td><%= @pay.lop.to_i%></td>
+              <td>Deductions</td><td><%= @pay.deduction.to_i%></td>
             </tr>
             <tr>
-              <td>Gross Pay</td><td><%= @pay.gross%></td>
-              <td>Net Pay</td><td><%= @pay.net%></td>
+              <td>Gross Pay</td><td><%= @pay.gross.to_i%></td>
+              <td>Net Pay</td><td><%= @pay.net.to_i%></td>
             </tr>
             <tr>
               <td>Cost to Company pa</td><td><%= @pay.ctc%></td>
