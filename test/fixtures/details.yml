@@ -1,0 +1,43 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fname: MyString
+  lname: MyString
+  dob: 2019-12-03
+  doj: 2019-12-03
+  bloodtype: MyString
+  contact: MyString
+  gender: MyString
+  address: MyText
+  state: MyString
+  city: MyString
+  country: MyString
+  pincode: MyString
+  ename: MyString
+  econtact: MyString
+  pskill: MyString
+  sskill1: MyString
+  sskill2: MyString
+  notice: 1
+  relation: MyString
+
+two:
+  fname: MyString
+  lname: MyString
+  dob: 2019-12-03
+  doj: 2019-12-03
+  bloodtype: MyString
+  contact: MyString
+  gender: MyString
+  address: MyText
+  state: MyString
+  city: MyString
+  country: MyString
+  pincode: MyString
+  ename: MyString
+  econtact: MyString
+  pskill: MyString
+  sskill1: MyString
+  sskill2: MyString
+  notice: 1
+  relation: MyString
