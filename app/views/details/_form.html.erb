@@ -23,7 +23,7 @@
           <td><%= f.label "Contact "%><font color="white">*</font></td>
           <td><%= f.text_field :contact, :pattern=>'\d*', :maxlength=>10, :minlength=>10%></td>
           <td><%= f.label "Gender "%><font color="white">*</font></td>
-          <td><%= f.radio_button :gender, 'Male'%> Male<%= f.radio_button :gender, 'Female '%> Female <br><span style="color:white;"><%= @detail.errors[:gender][0] rescue nil%></span></td>
+          <td><%= f.radio_button :gender, 'Male'%> Male <%= f.radio_button :gender, 'Female '%> Female <br><span style="color:white;"><%= @detail.errors[:gender][0] rescue nil%></span></td>
         </tr>
         <tr>
           <td><%= f.label :address%></td>
@@ -66,7 +66,7 @@
           <td><%= f.text_field :sskill2%></td>
         </tr>
         <tr>
-          <td><%= f.submit "Submit" %></td>
+          <td><%= f.submit "Next" %></td>
           <td></td>
           <td></td>
           <td></td>

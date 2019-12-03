@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_090228) do
+ActiveRecord::Schema.define(version: 2019_12_03_125756) do
 
   create_table "details", force: :cascade do |t|
     t.string "fname"
@@ -37,19 +37,19 @@ ActiveRecord::Schema.define(version: 2019_12_03_090228) do
   end
 
   create_table "pays", force: :cascade do |t|
-    t.decimal "basic"
-    t.decimal "hra"
-    t.decimal "cca"
-    t.decimal "spl_all"
-    t.decimal "trans_all"
-    t.decimal "reimb"
-    t.decimal "i_tax"
-    t.decimal "p_tax"
-    t.decimal "lop"
-    t.decimal "deduction"
-    t.decimal "gross"
-    t.decimal "net"
-    t.decimal "ctc"
+    t.decimal "basic", default: "0.0"
+    t.decimal "hra", default: "0.0"
+    t.decimal "cca", default: "0.0"
+    t.decimal "spl_all", default: "0.0"
+    t.decimal "trans_all", default: "0.0"
+    t.decimal "reimb", default: "0.0"
+    t.decimal "i_tax", default: "0.0"
+    t.decimal "p_tax", default: "0.0"
+    t.decimal "lop", default: "0.0"
+    t.decimal "deduction", default: "0.0"
+    t.decimal "gross", default: "0.0"
+    t.decimal "net", default: "0.0"
+    t.decimal "ctc", default: "0.0"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

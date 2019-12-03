@@ -2,36 +2,36 @@
   <table class="table table-striped table-dark">
     <tr>
       <td><%= f.label "Basic Pay" %></td>
-      <td><%= f.number_field :basic, :min=>0 %></td>
+      <td><%= f.number_field :basic, :min=>0, :default=> 0 %></td>
       <td><%= f.label "HRA" %></td>
-      <td><%= f.number_field :hra, :min=>0 %></td>
+      <td><%= f.number_field :hra, :min=>0, :default=> 0 %></td>
     </tr>
     <tr>
       <td><%= f.label "CCA" %></td>
-      <td><%= f.number_field :cca, :min=>0 %></td>
+      <td><%= f.number_field :cca, :min=>0, :default=> 0 %></td>
       <td><%= f.label "Special Allowance" %></td>
-      <td><%= f.number_field :spl_all, :min=>0 %></td>
+      <td><%= f.number_field :spl_all, :min=>0, :default=> 0 %></td>
     </tr>
     <tr>
       <td><%= f.label "Transport Allowance" %></td>
-      <td><%= f.number_field :trans_all, :min=>0 %></td>
+      <td><%= f.number_field :trans_all, :min=>0, :default=> 0 %></td>
       <td><%= f.label "Reimbursment" %></td>
-      <td><%= f.number_field :reimb, :min=>0 %></td>
+      <td><%= f.number_field :reimb, :min=>0, :default=> 0 %></td>
     </tr>
     <tr>
       <td colspan="4"><b>DEDUCTIONS</b></td>
     </tr>
     <tr>
       <td><%= f.label "Income Tax" %></td>
-      <td><%= f.number_field :i_tax, :min=>0 %></td>
+      <td><%= f.number_field :i_tax, :min=>0, :default=> 0 %></td>
       <td><%= f.label "Professional Tax" %></td>
-      <td><%= f.number_field :p_tax, :min=>0 %></td>
+      <td><%= f.number_field :p_tax, :min=>0, :default=> 0 %></td>
     </tr>
     <tr>
       <td><%= f.label "Loss of Pay" %></td>
-      <td><%= f.number_field :lop, :min=>0 %></td>
+      <td><%= f.number_field :lop, :min=>0, :default=> 0 %></td>
       <td><%= f.label "Other Deductions" %></td>
-      <td><%= f.number_field :deduction, :min=>0 %></td>
+      <td><%= f.number_field :deduction, :min=>0, :default=> 0 %></td>
     </tr>
     <tr>
       <td><%= f.submit "Submit" %></td>
