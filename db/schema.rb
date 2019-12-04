@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_04_062834) do
+ActiveRecord::Schema.define(version: 2019_12_04_072931) do
 
   create_table "constants", force: :cascade do |t|
     t.decimal "hra"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2019_12_04_062834) do
     t.decimal "ctc", default: "0.0"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "days"
+    t.integer "days", default: 0
     t.integer "user_id"
   end
 
