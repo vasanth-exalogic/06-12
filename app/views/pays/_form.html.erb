@@ -2,14 +2,14 @@
   <table class="table table-striped table-dark">
     <tr>
       <td><%= f.label "Basic Pay" %></td>
-      <td><%= f.number_field :basic, :min=>0, :default=> 0 %></td>
+      <td><%= f.number_field :basic, :min=>0%><span style="color:white;"><%= @pay.errors[:basic][0] rescue nil%></span></td>
       <td colspan="2"></td>
     </tr>
 
     <tr>
 
       <td><%= f.label "Reimbursment" %></td>
-      <td><%= f.number_field :reimb, :min=>0, :default=> 0 %></td>
+      <td><%= f.number_field :reimb, :min=>0%><span style="color:white;"><%= @pay.errors[:reimb][0] rescue nil%></span></td>
       <td colspan="2"></td>
     </tr>
     <tr>
@@ -18,12 +18,12 @@
 
     <tr>
       <td><%= f.label "Number of Leaves in days" %></td>
-      <td><%= f.number_field :days, :min=>0, :default=> 0 %></td>
+      <td><%= f.number_field :days, :min=>0%><span style="color:white;"><%= @pay.errors[:days][0] rescue nil%></span></td>
       <td colspan="2"></td>
     </tr>
     <tr>
       <td><%= f.label "Other Deductions" %></td>
-      <td><%= f.number_field :deduction, :min=>0, :default=> 0 %></td>
+      <td><%= f.number_field :deduction, :min=>0%><span style="color:white;"><%= @pay.errors[:deduction][0] rescue nil%></span></td>
       <td colspan="2"></td>
     </tr>
     <tr>

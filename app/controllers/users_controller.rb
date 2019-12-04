@@ -45,16 +45,17 @@ class UsersController < ApplicationController
       @detail = Detail.find(params[:id])
       @pay = Pay.find(params[:id])
       @percentage = Percentage.find(1)
-      @pay.hra = (@pay.basic * @percentage.hra)/100
-      @pay.cca = (@pay.basic * @percentage.cca)/100
-      @pay.spl_all = (@pay.basic * @percentage.spl_all)/100
-      @pay.trans_all = (@pay.basic * @percentage.trans_all)/100
-      @pay.lop = (@pay.basic/30) * @pay.days
+        @pay.hra = (@pay.basic * @percentage.hra)/100
+        @pay.cca = (@pay.basic * @percentage.cca)/100
+        @pay.spl_all = (@pay.basic * @percentage.spl_all)/100
+        @pay.trans_all = (@pay.basic * @percentage.trans_all)/100
+        @pay.lop = (@pay.basic/30) * @pay.days
       @pay.gross = @pay.basic+@pay.hra+@pay.cca+@pay.spl_all+@pay.trans_all
       @pay.net = @pay.gross-@pay.lop-@pay.deduction
       @pay.ctc = @pay.net*12
       @pay.i_tax = find_i_tax(@pay.gross*12)
       @pay.p_tax = find_p_tax(@pay.gross)
+
     end
 
     def destroy
