@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_04_035920) do
+ActiveRecord::Schema.define(version: 2019_12_04_062834) do
+
+  create_table "constants", force: :cascade do |t|
+    t.decimal "hra"
+    t.decimal "cca"
+    t.decimal "spl_all"
+    t.decimal "trans_all"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "details", force: :cascade do |t|
     t.string "fname"
@@ -55,6 +64,15 @@ ActiveRecord::Schema.define(version: 2019_12_04_035920) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "days"
     t.integer "user_id"
+  end
+
+  create_table "percentages", force: :cascade do |t|
+    t.decimal "hra", default: "0.0"
+    t.decimal "cca", default: "0.0"
+    t.decimal "spl_all", default: "0.0"
+    t.decimal "trans_all", default: "0.0"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

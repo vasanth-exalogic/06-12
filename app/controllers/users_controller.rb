@@ -44,6 +44,17 @@ class UsersController < ApplicationController
     def show
       @detail = Detail.find(params[:id])
       @pay = Pay.find(params[:id])
+      @percentage = Percentage.find(1)
+      @pay.hra = (@pay.basic * @percentage.hra)/100
+      @pay.cca = (@pay.basic * @percentage.cca)/100
+      @pay.spl_all = (@pay.basic * @percentage.spl_all)/100
+      @pay.trans_all = (@pay.basic * @percentage.trans_all)/100
+      @pay.lop = (@pay.basic/30) * @pay.days
+      @pay.gross = @pay.basic+@pay.hra+@pay.cca+@pay.spl_all+@pay.trans_all
+      @pay.net = @pay.gross-@pay.lop-@pay.deduction
+      @pay.ctc = @pay.net*12
+      @pay.i_tax = find_i_tax(@pay.ctc)
+      @pay.p_tax = find_p_tax(@pay.net)
     end
 
     def destroy
@@ -86,4 +97,25 @@ class UsersController < ApplicationController
       end
       count
     end
+
+    def find_i_tax(ctc)
+      if ctc <= 250000
+        return 0
+      elsif ctc <= 500000
+        return (ctc-250000)*0.05
+      elsif ctc <= 1000000
+        return 12500+((ctc-500000)*0.2)
+      else
+        return 112500+((ctc-1000000)*0.3)
+      end
+    end
+
+    def find_p_tax(net)
+      if net <= 15000
+        return 0
+      else
+        return 200
+      end
+    end
+
 end
