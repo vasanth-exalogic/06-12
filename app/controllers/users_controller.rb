@@ -47,7 +47,11 @@ class UsersController < ApplicationController
     end
 
     def destroy
+      @pay = Pay.find(params[:id])
+      @detail = Detail.find(params[:id])
       @user.delete
+      @pay.delete
+      @detail.delete
       redirect_to '/users'
     end
 

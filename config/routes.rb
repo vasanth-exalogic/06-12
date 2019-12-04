@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   # Routes for USER CONTROLLER
   resources :users
   resources :details, only: [:new,:create,:edit,:update]
-  resources :pays, only: [:new,:create,:edit,:update]
+  resources :pays, only: [:index,:new,:create,:edit,:update]
+  post '/temp' => "pays#save"
 end
