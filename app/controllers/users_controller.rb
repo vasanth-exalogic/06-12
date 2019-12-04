@@ -53,8 +53,8 @@ class UsersController < ApplicationController
       @pay.gross = @pay.basic+@pay.hra+@pay.cca+@pay.spl_all+@pay.trans_all
       @pay.net = @pay.gross-@pay.lop-@pay.deduction
       @pay.ctc = @pay.net*12
-      @pay.i_tax = find_i_tax(@pay.ctc)
-      @pay.p_tax = find_p_tax(@pay.net)
+      @pay.i_tax = find_i_tax(@pay.gross*12)
+      @pay.p_tax = find_p_tax(@pay.gross)
     end
 
     def destroy
