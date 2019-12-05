@@ -1,11 +1,20 @@
 <%= form_for @detail do |f|%>
 <table class="table table-striped table-dark">
-  <tr>
-    <td class="font-beba-small" style="vertical-align:middle; color:grey;">Login Details</td>
-    <td class="font-beba-small active-tab" style="vertical-align:middle;">Personal Details</td>
-    <td class="font-beba-small" style="vertical-align:middle; color:grey;">Other Details</td>
-    <td class="font-beba-small" style="vertical-align:middle; color:grey;">Salary Details</td>
-  </tr>
+  <% if session[:temp]=='edit' %>
+    <tr>
+      <td class="font-beba-small" style="vertical-align:middle;"><a href="<%= edit_user_path(@detail) %>" style="color:grey; text-decoration:none;">Login Details</a></td>
+      <td class="font-beba-small active-tab" style="vertical-align:middle;"><a href="#" style="color:white; text-decoration:none;">Personal Details</a></td>
+      <td class="font-beba-small" style="vertical-align:middle;"><a href="<%= edit_emergency_path(@detail) %>" style="color:grey; text-decoration:none;">Other Details</a></td>
+      <td class="font-beba-small" style="vertical-align:middle;"><a href="<%= edit_pay_path(@detail) %>" style="color:grey; text-decoration:none;">Salary Details</a></td>
+    </tr>
+  <% else %>
+    <tr>
+      <td class="font-beba-small" style="vertical-align:middle; color:grey;">Login Details</td>
+      <td class="font-beba-small active-tab" style="vertical-align:middle;">Personal Details</td>
+      <td class="font-beba-small" style="vertical-align:middle; color:grey;">Other Details</td>
+      <td class="font-beba-small" style="vertical-align:middle; color:grey;">Salary Details</td>
+    </tr>
+  <% end%>
         <tr>
           <td><%= f.label "First Name "%><font color="white">*</font></td>
           <td><%= f.text_field :fname%><span style="color:white;"><%= @detail.errors[:fname][0] rescue nil%></span></td>

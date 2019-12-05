@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
     def new
       @user = User.new
+      session[:temp]='new'
     end
 
     def create
@@ -28,6 +29,7 @@ class UsersController < ApplicationController
     end
 
     def edit
+      session[:temp]='edit'
     end
 
     def update

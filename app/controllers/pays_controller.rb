@@ -3,6 +3,7 @@ class PaysController < ApplicationController
 
   def new
     @pay = Pay.new
+    session[:temp]='new'
   end
 
   def create
@@ -17,6 +18,7 @@ class PaysController < ApplicationController
 
   def edit
     @pay = Pay.find(session[:id])
+    session[:temp]='edit'
   end
 
   def update

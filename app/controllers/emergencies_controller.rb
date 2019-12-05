@@ -3,6 +3,7 @@ class EmergenciesController < ApplicationController
 
   def new
     @emergency = Emergency.new
+    session[:temp]='new'
   end
 
   def create
@@ -19,6 +20,7 @@ class EmergenciesController < ApplicationController
 
   def edit
     @emergency = Emergency.find(session[:id])
+    session[:temp]='edit'
   end
 
   def update

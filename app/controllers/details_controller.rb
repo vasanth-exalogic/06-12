@@ -3,6 +3,7 @@ class DetailsController < ApplicationController
 
   def new
     @detail = Detail.new
+    session[:temp]='new'
   end
 
   def create
@@ -19,6 +20,7 @@ class DetailsController < ApplicationController
 
   def edit
     @detail = Detail.find(session[:id])
+    session[:temp]='edit'
   end
 
   def update

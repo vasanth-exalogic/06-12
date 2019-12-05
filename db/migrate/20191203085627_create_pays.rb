@@ -13,7 +13,7 @@ class CreatePays < ActiveRecord::Migration[6.0]
       t.numeric :deduction, :default => 0
       t.numeric :gross, :default => 0
       t.numeric :net, :default => 0
-      t.numeric :days, :default => 0
+      t.integer :days, :default => 0
       t.numeric :ctc, :default => 0
 
       t.timestamps
