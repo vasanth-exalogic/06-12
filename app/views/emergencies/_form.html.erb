@@ -1,0 +1,41 @@
+<%= form_for @emergency do |f|%>
+<div class="nav1">
+  <div class="inner1 font-beba-small">
+    <span style="color:white;">Login Details</span>
+  </div>
+  <div class="inner1 active20 font-beba-small">
+    <span style="color:white;">Personal Details</span>
+  </div>
+  <div class="inner1 font-beba-small">
+    <span style="color:white;">Salary Details</span>
+  </div>
+</div>
+<table class="table table-striped table-dark">
+        <tr>
+          <td><%= f.label "Emergency Contact Name "%><font color="white">*</font></td>
+          <td><%= f.text_field :ename%><span style="color:white;"><%= @detail.errors[:ename][0] rescue nil%></span></td>
+          <td><%= f.label "Relation"%></td>
+          <td><%= f.select :relation, ['Relation','Parent','Spouse','Friend','Others']%></td>
+        </tr>
+        <tr>
+          <td><%= f.label "Emergency Contact Number "%><font color="white">*</font></td>
+          <td><%= f.text_field :econtact, :pattern=>'\d*', :maxlength=>10, :minlength=>10%></td>
+          <td><%= f.label "Primary Skill"%></td>
+          <td><%= f.text_field :pskill%></td>
+        </tr>
+        <tr>
+          <td><%= f.label "Secondary Skill 1"%></td>
+          <td><%= f.text_field :sskill1%></td>
+          <td><%= f.label "Secondary Skill 2"%></td>
+          <td><%= f.text_field :sskill2%></td>
+        </tr>
+        <tr>
+          <td><%= f.submit "Next" %></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+</table>
+<pre>
+</pre>
+<% end%>

@@ -13,7 +13,12 @@
  *= require_tree .
  *= require_self
  */
-
+ table{
+   width: 100%;
+ }
+ td{
+   width: 25%;
+ }
        .demo {
          margin: 0 auto;
          padding-top: 64px;
@@ -159,7 +164,10 @@
     text-align: center;
   }
 
-
+  .active-tab{
+    background-color: #333a40;
+    font-size: 30px;
+  }
 
 
 

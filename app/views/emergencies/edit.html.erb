@@ -8,7 +8,6 @@
     <link type="text/css" rel="stylesheet" href="css/froala_blocks.css">
     <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
     <style>
       html {
         height: 100%;
@@ -31,6 +30,7 @@
       }
 
 
+
     </style>
     <script>
       var page = window.location.pathname.split('/')
@@ -48,7 +48,7 @@
     <header class="bg-light">
       <div class="container">
         <nav class="navbar navbar-expand-md">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/users">
             <img src="http://www.exalogic.in/wp-content/uploads/2018/08/exalogic.png" height="40" alt="image">
           </a>
 
@@ -59,14 +59,11 @@
           <div class="collapse navbar-collapse" id="navbarNav9">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/users">Home <span class="sr-only">(current)</span></a>
               </li>
 
               <li class="nav-item">
                 <a class="nav-link" href="/users/new">Registration</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/percentages/1/edit">Set Salary Details</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#footer">Contact Us</a>
@@ -89,91 +86,17 @@
         </nav>
       </div>
     </header>
-    <br>
+
     <div class="container">
+      <pre>
 
+<div class="font-beba">EDIT DETAILS</div><span style="color:white;"><%= @error%></span><%= render "form"%>
+<font color="white"><span><% @error%></span></font>
 
-
-                <% i=0%>
-                <table>
-                  <tr>
-                    <td colspan="3" align="center">
-                      <div class="cont">
-                      <div class="font-bebas">
-                        <i class="fas fa-user-circle fa-3x"></i><br>
-                        USERS COUNT<br>
-                        <%= @count %>
-                      </div>
-                    </div>
-                    </td>
-                  </tr>
-                  <% @details.each do |user|%>
-                      <% if i%3==0%>
-                        <tr>
-                          <td>
-                            <a href="<%= "/users/" << user.id.to_s%>">
-                              <div class="card">
-                                <% if user.gender=='Male'%>
-                                  <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:100%">
-                                <%else%>
-                                  <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:100%">
-                                <% end%>
-                                <div class="container-card">
-                                  <h4><b><%= user.fname%></b></h4>
-                                  <p><%= user.lname%></p>
-                                </div>
-                              </div>
-                            </a>
-
-                          </td>
-                      <% elsif i%3==1%>
-                          <td>
-                            <a href="<%= "/users/" << user.id.to_s%>">
-                              <div class="card">
-                                <% if user.gender=='Male'%>
-                                  <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:100%">
-                                <%else%>
-                                  <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:100%">
-                                <% end%>
-                                <div class="container-card">
-                                  <h4><b><%= user.fname%></b></h4>
-                                  <p><%= user.lname%></p>
-                                </div>
-                              </div>
-                            </a>
-
-                          </td>
-                      <% else%>
-                          <td>
-                            <a href="<%= "/users/" << user.id.to_s%>">
-                              <div class="card">
-                                <% if user.gender=='Male'%>
-                                  <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:100%">
-                                <%else%>
-                                  <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" style="width:100%">
-                                <% end%>
-                                <div class="container-card">
-                                  <h4><b><%= user.fname%></b></h4>
-                                  <p><%= user.lname%></p>
-                                </div>
-                              </div>
-                            </a>
-
-                          </td>
-                        </tr>
-                      <% end%>
-                      <% i+=1%>
-                  <% end%>
-                </table>
-
-              <% @users.each do |user|%>
-                  <pre>
-
-                  </pre>
-              <% end%>
-
-
+      </pre>
     </div>
+
+<div class="footer" id="footer">
 <div class="footer" id="footer">
 <pre><h4>EXALOGIC SOLUTIONS</h4>No 21, 1st Main, Ganga nagar, Bangalore
 Karnataka, India - 560032
@@ -182,4 +105,5 @@ Karnataka, India - 560032
 <i class="fa fa-phone" aria-hidden="true">  </i><a href="tel:080- 48905017">080- 48905017</a>
 <a href="#"><i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i></a></div>
   </body>
+
 </html>

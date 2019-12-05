@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_04_072931) do
+ActiveRecord::Schema.define(version: 2019_12_05_041027) do
 
   create_table "constants", force: :cascade do |t|
     t.decimal "hra"
@@ -34,16 +34,21 @@ ActiveRecord::Schema.define(version: 2019_12_04_072931) do
     t.string "city"
     t.string "country"
     t.string "pincode"
-    t.string "ename"
-    t.string "econtact"
-    t.string "pskill"
-    t.string "sskill1"
-    t.string "sskill2"
     t.integer "notice"
-    t.string "relation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user"
+  end
+
+  create_table "emergencies", force: :cascade do |t|
+    t.string "ename"
+    t.string "econtact"
+    t.string "relation"
+    t.string "pskill"
+    t.string "sskill1"
+    t.string "sskill2"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "pays", force: :cascade do |t|

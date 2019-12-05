@@ -7,12 +7,11 @@ class DetailsController < ApplicationController
 
   def create
     @error
-    @detail = Detail.new(detail_params)
-    @detail.id = session[:id]
-    if @detail.save
-      redirect_to new_pay_path
+    @new = Detail.new(detail_params)
+    if @new.save
+      redirect_to new_emergency_path
     else
-      @error = "Please fill all the mandatory fields"
+      @error = "Please fill the mandatory fields"
       render 'new'
     end
   end
@@ -25,7 +24,7 @@ class DetailsController < ApplicationController
     @detail = Detail.find(session[:id])
     @error
     if @detail.update(detail_params)
-      redirect_to edit_pay_path
+      redirect_to edit_emergency_path
     else
       @error = "Please fill all the mandatory fields"
       render 'edit'
@@ -36,7 +35,7 @@ class DetailsController < ApplicationController
 
   def detail_params
     params.require(:detail).permit(:fname,:lname,:dob,:doj,:sal,:contact,:bloodtype,:address,:city,:state,:gender,:notice,
-    :country,:pincode,:ename,:relation,:econtact,:pskill,:sskill1,:sskill2)
+    :country,:pincode)
   end
 
   def is_admin?
