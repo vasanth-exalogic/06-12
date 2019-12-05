@@ -1,4 +1,5 @@
 class PercentagesController < ApplicationController
+  before_action :is_admin?
 
   def edit
     @percentage = Percentage.find(1)
@@ -13,7 +14,16 @@ class PercentagesController < ApplicationController
     end
   end
 
+  private
+
   def per_params
     params.require(:percentage).permit(:hra,:cca,:spl_all,:trans_all)
   end
+
+  def is_admin?
+    unless session[:type] == 'admin'
+      redirect_to root_path
+    end
+  end
+  
 end
