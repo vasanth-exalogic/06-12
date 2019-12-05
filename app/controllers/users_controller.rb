@@ -43,6 +43,7 @@ class UsersController < ApplicationController
 
     def show
       @detail = Detail.find(params[:id])
+      @emergency = Emergency.find(params[:id])
       @pay = Pay.find(params[:id])
       @percentage = Percentage.find(1)
         @pay.hra = (@pay.basic * @percentage.hra)/100

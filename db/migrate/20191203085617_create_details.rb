@@ -13,13 +13,7 @@ class CreateDetails < ActiveRecord::Migration[6.0]
       t.string :city
       t.string :country
       t.string :pincode
-      t.string :ename
-      t.string :econtact
-      t.string :pskill
-      t.string :sskill1
-      t.string :sskill2
       t.integer :notice
-      t.string :relation
 
       t.timestamps
     end

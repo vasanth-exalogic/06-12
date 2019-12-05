@@ -7,8 +7,9 @@ class DetailsController < ApplicationController
 
   def create
     @error
-    @new = Detail.new(detail_params)
-    if @new.save
+    @detail = Detail.new(detail_params)
+    @detail.id = session[:id]
+    if @detail.save
       redirect_to new_emergency_path
     else
       @error = "Please fill the mandatory fields"

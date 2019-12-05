@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_041027) do
-
-  create_table "constants", force: :cascade do |t|
-    t.decimal "hra"
-    t.decimal "cca"
-    t.decimal "spl_all"
-    t.decimal "trans_all"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2019_12_05_054039) do
 
   create_table "details", force: :cascade do |t|
     t.string "fname"
@@ -37,7 +28,6 @@ ActiveRecord::Schema.define(version: 2019_12_05_041027) do
     t.integer "notice"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user"
   end
 
   create_table "emergencies", force: :cascade do |t|
@@ -56,19 +46,18 @@ ActiveRecord::Schema.define(version: 2019_12_05_041027) do
     t.decimal "hra", default: "0.0"
     t.decimal "cca", default: "0.0"
     t.decimal "spl_all", default: "0.0"
-    t.decimal "trans_all", default: "0.0"
     t.decimal "reimb", default: "0.0"
+    t.decimal "trans_all", default: "0.0"
     t.decimal "i_tax", default: "0.0"
-    t.decimal "p_tax", default: "0.0"
     t.decimal "lop", default: "0.0"
+    t.decimal "p_tax", default: "0.0"
     t.decimal "deduction", default: "0.0"
     t.decimal "gross", default: "0.0"
     t.decimal "net", default: "0.0"
+    t.integer "days", default: 0
     t.decimal "ctc", default: "0.0"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "days", default: 0
-    t.integer "user_id"
   end
 
   create_table "percentages", force: :cascade do |t|
@@ -83,9 +72,9 @@ ActiveRecord::Schema.define(version: 2019_12_05_041027) do
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
+    t.string "role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
