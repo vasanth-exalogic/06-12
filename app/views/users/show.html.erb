@@ -156,41 +156,26 @@
               <td></td><td></td>
             </tr>
             <tr>
-              <td colspan="4" style="text-align:center;"><strong><h3>SALARY DETAILS</h3></strong></td>
+              <td colspan="4" align="center" style="font-size:30px;">BANK DETAILS</td>
             </tr>
             <tr>
-              <td>Basic Pay</td><td><%= @pay.basic.to_i%></td>
-              <td>HRA</td><td><%= @pay.hra.to_i%></td>
+              <td>Account Name</td><td><%= @account.accname%></td>
+              <td>Account Number</td><td><%= @account.accno%></td>
             </tr>
             <tr>
-              <td>CCA</td><td><%= @pay.cca.to_i%></td>
-              <td>Special Allowance</td><td><%= @pay.spl_all.to_i%></td>
+              <td>Bank</td><td><%= @account.bank%></td>
+              <td>Branch</td><td><%= @account.branch%></td>
             </tr>
             <tr>
-              <td>Transport Allowance</td><td><%= @pay.trans_all.to_i%></td>
-              <td>Reimbursment</td><td><%= @pay.reimb.to_i%></td>
-            </tr>
-
-            <tr>
-              <td>Loss of Pay</td><td><%= @pay.lop.to_i%></td>
-              <td>Deductions</td><td><%= @pay.deduction.to_i%></td>
-            </tr>
-            <tr>
-              <td>Gross Pay</td><td><%= @pay.gross.to_i%></td>
-              <td>Net Pay</td><td><%= @pay.net.to_i%></td>
-            </tr>
-            <tr>
-              <td>Cost to Company pa</td><td><%= @pay.ctc.to_i%></td>
-              <td colspan="2"></td>
-            </tr>
-            <tr>
-              <td>Income Tax <br>per annum</td><td><%= @pay.i_tax.to_i%></td>
-              <td>Professional Tax<br>per month</td><td><%= @pay.p_tax.to_i%></td>
+              <td>IFSC Code</td><td><%= @account.ifsc%></td>
+              <td></td><td></td>
             </tr>
             <% if session[:type]=='admin'%>
             <tr>
               <td><%= link_to "Edit User", edit_user_path(@user)%></td>
-              <td><%= link_to "Delete User", user_path(@user), method: :delete, data: {confirm: "Are you sure?"}%></td><td></td><td></td>
+              <td><%= link_to "Generate Pay Slip", new_pay_path(@user)%></td>
+              <td><%= link_to "View Pay Slips", pay_path(@user)%></td>
+              <td><%= link_to "Delete User", user_path(@user), method: :delete, data: {confirm: "Are you sure?"}%></td>
             </tr>
             <% end%>
         </table>

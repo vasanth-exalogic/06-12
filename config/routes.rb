@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :users
   resources :details, only: [:new,:create,:edit,:update]
   resources :emergencies, only: [:new,:create,:edit,:update]
-  resources :pays, only: [:new,:create,:edit,:update]
-  resources :percentages, only: [:edit, :update]
+  resources :accounts, only: [:new,:create,:edit,:update]
+  resources :pays, only: [:create, :show]
+  resources :pers, only: [:edit, :update]
+  get "/pays/new/:id" => "pays#new", as: "new_pay"
 end

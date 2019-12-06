@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_041027) do
+ActiveRecord::Schema.define(version: 2019_12_06_112653) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.string "accno"
+    t.string "bank"
+    t.string "branch"
+    t.string "ifsc"
+    t.string "accname"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "details", force: :cascade do |t|
     t.string "fname"
@@ -26,6 +36,9 @@ ActiveRecord::Schema.define(version: 2019_12_05_041027) do
     t.string "country"
     t.string "pincode"
     t.integer "notice"
+    t.string "empid"
+    t.string "department"
+    t.string "designation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -56,15 +69,22 @@ ActiveRecord::Schema.define(version: 2019_12_05_041027) do
     t.decimal "net", default: "0.0"
     t.integer "days", default: 0
     t.decimal "ctc", default: "0.0"
+    t.decimal "hra_per", default: "0.0"
+    t.decimal "cca_per", default: "0.0"
+    t.decimal "spl_all_per", default: "0.0"
+    t.decimal "trans_all_per", default: "0.0"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "month"
+    t.integer "year"
+    t.string "pay_id"
   end
 
-  create_table "percentages", force: :cascade do |t|
-    t.decimal "hra", default: "0.0"
-    t.decimal "cca", default: "0.0"
-    t.decimal "spl_all", default: "0.0"
-    t.decimal "trans_all", default: "0.0"
+  create_table "pers", force: :cascade do |t|
+    t.decimal "hra_per"
+    t.decimal "cca_per"
+    t.decimal "spl_all_per"
+    t.decimal "trans_all_per"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

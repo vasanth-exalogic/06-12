@@ -1,13 +1,13 @@
-class PercentagesController < ApplicationController
+class PersController < ApplicationController
   before_action :is_admin?
 
   def edit
-    @percentage = Percentage.find(1)
+    @per = Per.find(1)
   end
 
   def update
-    @percentage = Percentage.find(1)
-    if @percentage.update(per_params)
+    @per = Per.find(1)
+    if @per.update(per_params)
       redirect_to '/users'
     else
       render 'edit'
@@ -17,7 +17,7 @@ class PercentagesController < ApplicationController
   private
 
   def per_params
-    params.require(:percentage).permit(:hra,:cca,:spl_all,:trans_all)
+    params.require(:per).permit(:hra_per,:cca_per,:spl_all_per,:trans_all_per)
   end
 
   def is_admin?
@@ -25,5 +25,4 @@ class PercentagesController < ApplicationController
       redirect_to root_path
     end
   end
-  
 end

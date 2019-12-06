@@ -11,7 +11,7 @@ class EmergenciesController < ApplicationController
     @emergency = Emergency.new(emergency_params)
     @emergency.id = session[:id]
     if @emergency.save
-      redirect_to new_pay_path
+      redirect_to new_account_path
     else
       @error = "Please fill all the mandatory fields"
       render 'new'
@@ -27,7 +27,7 @@ class EmergenciesController < ApplicationController
     @emergency = Emergency.find(session[:id])
     @error
     if @emergency.update(emergency_params)
-      redirect_to edit_pay_path
+      redirect_to edit_account_path
     else
       @error = "Please fill all the mandatory fields"
       render 'edit'

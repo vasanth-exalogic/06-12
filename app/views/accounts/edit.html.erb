@@ -28,6 +28,9 @@
         min-height: 100%;
         font-family: "Helvetica Neue", Arial, sans-serif;
       }
+
+
+
     </style>
     <script>
       var page = window.location.pathname.split('/')
@@ -87,41 +90,12 @@
     <div class="container">
       <pre>
 
-<div class="font-beba">GENERATE PAY SLIP<br><%= @detail.fname %></div>
-<%= form_for @pay do |f|%>
-<table class="table table-striped table-dark">
-  <tr>
-    <td>Employee ID</td>
-    <td><%= @detail.empid %></td>
-    <td>Date of Joining</td>
-    <td><%= @detail.doj %></td>
-  </tr>
-  <tr>
-    <td>Year</td>
-    <td><%= f.number_field :year, :min=>@year%></td>
-    <td>Month</td>
-    <td><%= f.select :month, [['Month',0],['JAN',1],['FEB',2],['MAR',3],['APR',4],['MAY',5],['JUN',6],['JUL',7],['AUG',8],['SEP',9],['OCT',10],['NOV',11],['DEC',12]] %></td>
-  </tr>
-  <tr>
-    <td>Basic Pay</td>
-    <td><%= f.number_field :basic, :min=>0 %></td>
-    <td>Reimbursments</td>
-    <td><%= f.number_field :reimb, :min=>0 %></td>
-  </tr>
-  <tr>
-    <td>Number of Leaves in days</td>
-    <td><%= f.number_field :days, :min=>0 %></td>
-    <td>Deductions</td>
-    <td><%= f.number_field :deduction, :min=>0 %></td>
-  </tr>
-  <tr>
-    <td><%= f.submit "Create Payslip"%></td>
-    <td colspan="3"><span><%= @error %></span></td>
-  </tr>
-</table>
-<pre>
-</pre>
-<% end%>
+<div class="font-beba">EDIT ACCOUNT DETAILS</div><span style="color:white;"><%= @error%></span><%= render "form"%>
+<font color="white"><span><% @error%></span></font>
+
+
+
+
 
 
 

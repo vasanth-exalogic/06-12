@@ -1,6 +1,3 @@
 class Pay < ApplicationRecord
-  validates :basic, :presence => true
-  validates :reimb, :presence => true
-  validates :days, :presence => true
-  validates :deduction, :presence => true
+  validates_uniqueness_of :pay_id
 end

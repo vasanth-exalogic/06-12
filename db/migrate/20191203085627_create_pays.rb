@@ -16,6 +16,11 @@ class CreatePays < ActiveRecord::Migration[6.0]
       t.integer :days, :default => 0
       t.numeric :ctc, :default => 0
 
+      t.numeric :hra_per, :default => 0
+      t.numeric :cca_per, :default => 0
+      t.numeric :spl_all_per, :default => 0
+      t.numeric :trans_all_per, :default => 0
+      
       t.timestamps
     end
   end

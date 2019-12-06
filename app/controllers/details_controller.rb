@@ -10,6 +10,7 @@ class DetailsController < ApplicationController
     @error
     @detail = Detail.new(detail_params)
     @detail.id = session[:id]
+    @detail.empid = ("EXA" << (session[:id].to_s).rjust(4,"0"))
     if @detail.save
       redirect_to new_emergency_path
     else

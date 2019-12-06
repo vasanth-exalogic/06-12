@@ -14,6 +14,9 @@ class CreateDetails < ActiveRecord::Migration[6.0]
       t.string :country
       t.string :pincode
       t.integer :notice
+      t.string :empid
+      t.string :department
+      t.string :designation
 
       t.timestamps
     end
